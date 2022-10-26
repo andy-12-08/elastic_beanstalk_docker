@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Detector</title>
+</head>
+<style>
+    h2{color:gold; padding-top: 1%;}
+    body{background-color: cornsilk;}
+    input{display:block;}
+    .btn:hover{background-color: goldenrod;}
+    .center{margin: auto; max-width:fit-content;}
+    form{padding-top: 0%;}
+    div{margin: 2%;position: relative; background-color:gray;}
+    footer{bottom: 0%; position: absolute;}
+    h4{padding-bottom:4.5%;}
+    .developers{color: lightyellow;}
+    img{width:20%; padding-bottom:20%;}
+    .image{text-align:center}
+    .text_input{height:150px; width:500px; margin:auto;}
+    .subject_area{height:50px; width:200px; margin:auto;}
+    .title_field{height:30px; width:200px; margin:auto;}
+    .course_title{color:lightsalmon}
+    form{text-align: center;}
+    </style>
+    
+<body>
+    <div>
+        <h2 class="center">Fake News Detection System</h2>
+        <h4 class="center developers">Developed by Andrew Okafor, Dillon Jones, Lin Zeng, Miriam Nnadili, Shaojing Tian, Zack Loken</h4>
+        <h4 class="center course_title"> CSC 7333 (Machine Learning)</h4>
+
+        <form  class ="center" action="{{ url_for('predict')}}"method="post">
+            <textarea type="text" name="Title" placeholder="News title (Headline)" required="required" class="title_field"></textarea> <br><br>
+            <textarea type="text" name="Text" placeholder="Text" required="required" class="text_input"></textarea> <br> <br>
+            <textarea type="text" name="Subject" placeholder="Subject" required="required" class="subject_area"></textarea> <br> <br>
+    
+            <button type="submit" class="btn">Predict</button>
+        </form>
+       <br>
+       <br>
+       <h4 class="center"><b>{{ prediction_text }}</b></h4>
+     </div>
+    
+    
+</body>
+</html>
