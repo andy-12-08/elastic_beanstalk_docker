@@ -1,5 +1,8 @@
 FROM python:3
 WORKDIR /app
 COPY . .
-CMD ["python", "application.py"]
+
+RUN pip3 install -r requirements.txt
+
+CMD ["python3", "application.py"]
 
